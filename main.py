@@ -17,7 +17,7 @@ class ProjectScheduler(object):
     def __init__(self):
         self.proxy = Proxy()
         self.symbol = Symbol()
-        self.spider = None#BigTradeFromWeb()
+        self.spider = BigTradeFromWeb()
         self.status = True
         self.close = True
 
