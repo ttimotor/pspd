@@ -7,6 +7,7 @@
 import requests
 import random
 import re
+import time
 from db.mongodb import MongodbBase
 from fake_useragent import UserAgent
 from datetime import datetime
@@ -125,16 +126,14 @@ class BigTradeFromWeb(object):
         begin = time.time()
         with ThreadPoolExecutor(thrds) as executor:
             for url, runner in zip(self.urls, executor.map(self.fetch, self.urls)):
-                print('runner: ', runner)
-                print(len(self.urls), len(self.proxy_pool), len(self.fail), len(self.lose_url))
-
+                pass
         end = time.time()
         if end - begin < 300:
             with ThreadPoolExecutor(thrds) as executor:
                 for url, runner in zip(self.lose_url, executor.map(self.fetch, self.lose_url)):
-                    print('runner: ', runner)
-                    print(len(self.urls), len(self.proxy_pool), len(self.fail), len(self.lose_url))
-
+                    pass
+        print(len(self.urls), len(self.proxy_pool), len(self.fail), len(self.lose_url))
+        print('-*-'*50, 'TOTAL TIME: ', time.time() - begin, '-*-'*50)
 
 if __name__ == '__main__':
     import time
