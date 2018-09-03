@@ -77,6 +77,7 @@ class ProjectScheduler(object):
 if __name__ == '__main__':
 
     contronlib = ProjectScheduler()
-    contronlib.proxy_run()
+    contronlib.symbol_run()
+    # contronlib.proxy_run()
     #contronlib.scheduler()
 
