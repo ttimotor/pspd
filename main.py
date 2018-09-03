@@ -17,7 +17,7 @@ class ProjectScheduler(object):
     def __init__(self):
         self.proxy = Proxy()
         self.symbol = Symbol()
-        self.spider = BigTradeFromWeb()
+        self.spider = None#BigTradeFromWeb()
         self.status = True
         self.close = True
 
@@ -77,6 +77,6 @@ class ProjectScheduler(object):
 if __name__ == '__main__':
 
     contronlib = ProjectScheduler()
-
-    contronlib.scheduler()
+    contronlib.proxy_run()
+    #contronlib.scheduler()
 
